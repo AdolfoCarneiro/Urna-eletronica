@@ -42,7 +42,17 @@ function atualizaInterface(){
         seuVotoPara.getElementsByClassName.dysplay='block';
         aviso.style.display = 'block';
         descricao.innerHTML = `Nome: ${candidato.nome}<br/>Partido:${candidato.partido}`;
+
+        let fotosHtml = '';
+        for(let i in candidato.fotos){
+            fotosHtml += `<div class="d-1-image"><img src="assets/images/${candidato.fotos[i].url}" alt=""/>${candidato.fotos[i].legenda}</div>`;
+        }
+        lateral.innerHTML = fotosHtml;
         
+    }else{
+        seuVotoPara.getElementsByClassName.dysplay='block';
+        aviso.style.display = 'block';
+        descricao.innerHTML = `<div class="aviso--grande pisca">VOTO NULO<div/>`;
     }
 }
 
